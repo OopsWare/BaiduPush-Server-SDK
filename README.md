@@ -4,7 +4,7 @@ BaiduPush-Server-SDK
 百度云推送服务端接口的 java 实现
 
 使用方法:
-
+[CODE]
 import cn.oopsware.baidupush.*;
 
 public class test {
@@ -37,4 +37,4 @@ public class test {
 	}
 
 }
-
+[/CODE]
