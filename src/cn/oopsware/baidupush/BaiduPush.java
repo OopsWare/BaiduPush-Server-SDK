@@ -266,8 +266,10 @@ public class BaiduPush {
 		// notification_builder_id : default 0
 		
 		//String msg = String.format("{'title':'%s','description':'%s','notification_basic_style':7}", title, jsonencode(message));
-		String msg = String.format("{'title':'%s','description':'%s','notification_builder_id':0,'notification_basic_style':5,'open_type':2,'custom_content':'test'}", title, jsonencode(message));
-		//String msg = String.format("{'title':'%s','description':'%s','notification_builder_id':2,'notification_basic_style':7,'custom_content':'test android custom'}", title, jsonencode(message));
+		//String msg = String.format("{'title':'%s','description':'%s','notification_builder_id':0,'notification_basic_style':5,'open_type':2}", title, jsonencode(message));
+		//String msg = String.format("{'title':'%s','description':'%s','notification_builder_id':2,'notification_basic_style':7}", title, jsonencode(message));
+		
+		String msg = String.format("{'title':'%s','description':'%s','notification_builder_id':0,'notification_basic_style':1,'open_type':2,'custom_content':{'test':'test'}}", title, jsonencode(message));
 		
 		ra.put(RestApi._MESSAGES, msg);
 		
