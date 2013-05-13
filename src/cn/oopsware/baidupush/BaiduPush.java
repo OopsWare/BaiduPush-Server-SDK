@@ -214,8 +214,9 @@ public class BaiduPush {
 		return PostHttpRequest(ra);
 	}
 	
-	public String QueryDeviceType() {
+	public String QueryDeviceType(String channelid) {
 		RestApi ra = new RestApi(RestApi.METHOD_QUERY_DEVICE_TYPE);
+		ra.put(RestApi._CHANNEL_ID, channelid);
 		return PostHttpRequest(ra);
 	}
 	
