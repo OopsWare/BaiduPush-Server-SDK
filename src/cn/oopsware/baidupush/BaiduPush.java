@@ -36,13 +36,12 @@ public class BaiduPush {
 	
 	private String urlencode(String str) throws UnsupportedEncodingException {
 		String rc = URLEncoder.encode(str, "utf-8");
-		rc = rc.replace("*", "%2A");
 		return rc.replace("*", "%2A");
 	}
 	
 	public String jsonencode(String str) {
 		String rc = str.replace("\\", "\\\\");
-		//rc = rc.replace("\"", "\\\"");
+		rc = rc.replace("\"", "\\\"");
 		rc = rc.replace("\'", "\\\'");
 		return rc;
 	}
@@ -270,7 +269,12 @@ public class BaiduPush {
 		//String msg = String.format("{'title':'%s','description':'%s','notification_builder_id':0,'notification_basic_style':5,'open_type':2}", title, jsonencode(message));
 		//String msg = String.format("{'title':'%s','description':'%s','notification_builder_id':2,'notification_basic_style':7}", title, jsonencode(message));
 		
-		String msg = String.format("{'title':'%s','description':'%s','notification_builder_id':0,'notification_basic_style':1,'open_type':2,'custom_content':{'test':'test'}}", title, jsonencode(message));
+		String msg = String.format("{'title':'%s','description':'%s','notification_builder_id':0,'notification_basic_style':7,'open_type':2,'custom_content':{'test':'test'}}", title, jsonencode(message));
+		
+		//String msg = String.format("{\"title\":\"%s\",\"description\":\"%s\",\"notification_basic_style\":\"7\"}", title, jsonencode(message));
+		//String msg = String.format("{\"title\":\"%s\",\"description\":\"%s\",\"notification_builder_id\":0,\"notification_basic_style\":1,\"open_type\":2}", title, jsonencode(message));
+		
+		System.out.println(msg);
 		
 		ra.put(RestApi._MESSAGES, msg);
 		
